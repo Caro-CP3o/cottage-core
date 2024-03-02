@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,body{
+    scroll-behavior: smooth;
+    font-size: 1em;
+}
+a, img{
+    display: block;
+}
+/* VARIABLES */
+    /* colors */
+$dark: #1E1E1E;
+$dark-shadow: rgba(30, 30, 30, 0.3);
+$neutral: #fff;
+$cold: #ABCF76;
+$accent: #FFA031;
+$opacity: rgba(217,217,217,0.3);
+
+/* STYLES */
+@import "header.scss";
+@import "home.scss";
+@import "stay.scss";
+/* FONTS */
+@import "https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap";
+
+/* GENERAL */
+    /* structure */
+.slide, .mi-slide{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+}
+.mi-slide{
+    min-height: 50vh;
+}
+.wrapper{
+    width: 80%;
+    margin: 0 auto;
+}
+    /* text */
+.text-box, .card, .img-visit{
+    line-height: 1.5em;
+    letter-spacing: 0.1em;
+    font-kerning: normal;
+    h1, h2{
+        font-family: "Mukta Malar", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+        text-transform: uppercase;
+        padding-bottom: 0.5em;
+        font-size: 1.5em;
+    }
+    h2{
+        padding: 0;
+    }
+    p{
+        font-family: "Neuton", serif;
+        font-weight: 300;
+        font-style: normal;
+        font-size: 1.2em;
+    }
+}
+    /* call to action button #booking modal window */ 
+a.callto, .form-button input {
+    display: block;
+    width: max-content;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Mukta Malar", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    padding: 1em;
+    background-color: $dark;
+    box-shadow: 2px 2px 4px $dark-shadow;
+    border: none;
+    color: $neutral;
+    cursor: pointer;
+    &:hover{
+        background-color: $accent;
+        transition: all .5s ease-in-out;
+    }
+}
+a.accent-color{
+    color: $accent;
+    &:hover{
+        font-weight: 500;
+    }
+}

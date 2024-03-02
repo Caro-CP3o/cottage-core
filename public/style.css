@@ -1,0 +1,246 @@
+@import "https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  scroll-behavior: smooth;
+  font-size: 1em;
+}
+
+a, img {
+  display: block;
+}
+
+/* VARIABLES */
+/* colors */
+/* STYLES */
+header {
+  width: 100%;
+  background-color: #1E1E1E;
+  position: sticky;
+  padding: 0.5em 0;
+  top: 0;
+  z-index: 300;
+}
+
+#menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+#menu-top .right {
+  display: flex;
+  align-items: center;
+}
+#menu-top .right a.callto {
+  font-weight: 700;
+  box-shadow: none;
+}
+#menu-top nav {
+  padding-right: 1em;
+}
+#menu-top ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+}
+#menu-top li {
+  flex: 1;
+}
+#menu-top li a {
+  width: 100%;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: 0.1em;
+  padding: 0 1em;
+  color: #fff;
+  border-right: 1px solid #fff;
+}
+#menu-top li a:hover {
+  color: #ABCF76;
+  font-weight: 700;
+  transition: all 0.5s ease-in-out;
+}
+#menu-top #logo-menu-top {
+  color: #fff;
+}
+
+#home {
+  min-height: 80vh;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 3fr 2fr;
+}
+#home .img-slider {
+  max-height: 55vh;
+  grid-column: 1/-1;
+  grid-row: 1/4;
+  overflow: hidden;
+}
+#home .img-slider img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+aside {
+  margin: 2em 1em 2em 5em;
+  grid-column: 1/4;
+  grid-row: 4/6;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+aside a.accent-color {
+  text-decoration: none;
+  width: max-content;
+  padding-top: 0.3em;
+}
+aside a.callto {
+  margin-right: 3em;
+  margin-left: auto;
+}
+
+.hexa {
+  margin: 1em 5em 0 1em;
+  height: 18em;
+  width: 18em;
+  grid-column: 4/-1;
+  grid-row: 2/span 3;
+  z-index: 200;
+  /*background-color: lightblue;*/
+  filter: drop-shadow(2px 2px 4px rgba(30, 30, 30, 0.3));
+}
+.hexa a:hover {
+  transform: rotate(15deg);
+  transition: all 0.2s 0.1s ease-in-out;
+}
+.hexa img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+  transform: rotate(-0.02turn);
+}
+
+#visit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+#visit .img-visit {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+#visit .img-visit img {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+  object-position: center center;
+}
+#visit .img-visit .overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s 0.1s ease-in-out;
+  background-color: rgba(30, 30, 30, 0.3);
+  color: #fff;
+  /* center overlay text */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#visit .img-visit .overlay:hover {
+  background-color: rgba(255, 255, 255, 0);
+  font-size: 1.5em;
+}
+
+/* FONTS */
+/* GENERAL */
+/* structure */
+.slide, .mi-slide {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+}
+
+.mi-slide {
+  min-height: 50vh;
+}
+
+.wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* text */
+.text-box, .card, .img-visit {
+  line-height: 1.5em;
+  letter-spacing: 0.1em;
+  font-kerning: normal;
+}
+.text-box h1, .text-box h2, .card h1, .card h2, .img-visit h1, .img-visit h2 {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  padding-bottom: 0.5em;
+  font-size: 1.5em;
+}
+.text-box h2, .card h2, .img-visit h2 {
+  padding: 0;
+}
+.text-box p, .card p, .img-visit p {
+  font-family: "Neuton", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+/* call to action button #booking modal window */
+a.callto, .form-button input {
+  display: block;
+  width: max-content;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  padding: 1em;
+  background-color: #1E1E1E;
+  box-shadow: 2px 2px 4px rgba(30, 30, 30, 0.3);
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+a.callto:hover, .form-button input:hover {
+  background-color: #FFA031;
+  transition: all 0.5s ease-in-out;
+}
+
+a.accent-color {
+  color: #FFA031;
+}
+a.accent-color:hover {
+  font-weight: 500;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,56 @@
+header{
+    width: 100%;
+    background-color: $dark;
+    position: sticky;
+    padding: 0.5em 0;
+    top: 0;
+    z-index: 300;
+}
+#menu-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .right{
+        display: flex;
+        align-items: center;
+        a.callto{
+            font-weight: 700;
+            box-shadow: none;
+        }
+    }
+    nav{
+        padding-right: 1em;
+    }
+    ul{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+    }
+    li{
+        flex: 1;
+        a{
+            width: 100%;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: "Mukta Malar", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            letter-spacing: 0.1em;
+            padding: 0 1em;
+            color: $neutral;
+            border-right: 1px solid $neutral;
+            &:hover{
+                color: $cold;
+                font-weight: 700;
+                transition: all .5s ease-in-out;
+            }
+        }
+    }
+    #logo-menu-top{
+        color: #fff;
+    }
+
+}
