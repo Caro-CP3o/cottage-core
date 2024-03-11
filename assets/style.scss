@@ -44,7 +44,7 @@ $opacity: rgba(217,217,217,0.3);
     margin: 0 auto;
 }
     /* text */
-.text-box, .card, .img-visit{
+.text-box, .card, .img-visit, .form-group{
     line-height: 1.5em;
     letter-spacing: 0.1em;
     font-kerning: normal;
@@ -65,11 +65,12 @@ $opacity: rgba(217,217,217,0.3);
         font-size: 1em;
         text-transform: none;
     }
-    p{
+    p, input::placeholder{
         font-family: "Neuton", serif;
         font-weight: 300;
         font-style: normal;
         font-size: 1.2em;
+        color: red;
     }
 }
     /* call to action button #booking modal window */ 

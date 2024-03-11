@@ -242,6 +242,28 @@ aside a.callto {
   grid-column: 1/-1;
   grid-row: 2;
   background-color: #ABCF76;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact #form form {
+  display: flex;
+  justify-content: space-between;
+}
+#contact #form form .form-group input, #contact #form form textarea {
+  width: 35em;
+  background-color: #fff;
+  padding: 1em 0;
+  border: none;
+  cursor: text;
+  margin: 1em;
+}
+#contact #form form textarea {
+  height: 15em;
+  resize: none;
+}
+#contact #form form .form-button input {
+  margin-left: auto;
 }
 
 /* FONTS */
@@ -264,12 +286,12 @@ aside a.callto {
 }
 
 /* text */
-.text-box, .card, .img-visit {
+.text-box, .card, .img-visit, .form-group {
   line-height: 1.5em;
   letter-spacing: 0.1em;
   font-kerning: normal;
 }
-.text-box h1, .text-box h2, .text-box h3, .card h1, .card h2, .card h3, .img-visit h1, .img-visit h2, .img-visit h3 {
+.text-box h1, .text-box h2, .text-box h3, .card h1, .card h2, .card h3, .img-visit h1, .img-visit h2, .img-visit h3, .form-group h1, .form-group h2, .form-group h3 {
   font-family: "Mukta Malar", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -277,20 +299,21 @@ aside a.callto {
   padding-bottom: 0.5em;
   font-size: 1.5em;
 }
-.text-box h2, .card h2, .img-visit h2 {
+.text-box h2, .card h2, .img-visit h2, .form-group h2 {
   padding: 0;
 }
-.text-box h3, .card h3, .img-visit h3 {
+.text-box h3, .card h3, .img-visit h3, .form-group h3 {
   padding: 1em 1em 0 1em;
   font-weight: 200;
   font-size: 1em;
   text-transform: none;
 }
-.text-box p, .card p, .img-visit p {
+.text-box p, .text-box input::placeholder, .card p, .card input::placeholder, .img-visit p, .img-visit input::placeholder, .form-group p, .form-group input::placeholder {
   font-family: "Neuton", serif;
   font-weight: 300;
   font-style: normal;
   font-size: 1.2em;
+  color: red;
 }
 
 /* call to action button #booking modal window */

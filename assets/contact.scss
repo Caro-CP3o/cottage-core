@@ -12,5 +12,27 @@
         grid-column: 1 / -1;
         grid-row: 2;
         background-color: $cold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        form{
+            display: flex;
+            justify-content: space-between;
+            .form-group input, textarea{
+                width: 35em;
+                background-color: $neutral;
+                padding: 1em 0;
+                border: none;
+                cursor: text;
+                margin: 1em;
+            }
+            textarea{
+                height: 15em;
+                resize: none;
+            }
+            .form-button input{
+                margin-left: auto;
+            }
+        }
     }
 }
