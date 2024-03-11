@@ -1,0 +1,16 @@
+#contact{
+    #logo-btm{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img{
+            width: 50%;
+            height: auto;
+        }
+    }
+    #form{
+        grid-column: 1 / -1;
+        grid-row: 2;
+        background-color: $cold;
+    }
+}

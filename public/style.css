@@ -92,6 +92,18 @@ header {
   object-fit: cover;
   object-position: top left;
 }
+#home .hexa {
+  margin: 1em 1em 0 5em;
+  grid-column: 4/-1;
+  grid-row: 2/span 3;
+}
+#home .hexa img {
+  transform: rotate(-0.02turn);
+}
+#home .hexa a:hover {
+  transform: rotate(15deg);
+  transition: all 0.2s 0.1s ease-in-out;
+}
 
 aside {
   margin: 2em 1em 2em 5em;
@@ -111,31 +123,8 @@ aside a.callto {
   margin-left: auto;
 }
 
-.hexa {
-  margin: 1em 5em 0 1em;
-  height: 18em;
-  width: 18em;
-  grid-column: 4/-1;
-  grid-row: 2/span 3;
-  z-index: 200;
-  /*background-color: lightblue;*/
-  filter: drop-shadow(2px 2px 4px rgba(30, 30, 30, 0.3));
-}
-.hexa a:hover {
-  transform: rotate(15deg);
-  transition: all 0.2s 0.1s ease-in-out;
-}
-.hexa img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top left;
-  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-  transform: rotate(-0.02turn);
-}
-
 #visit {
+  min-height: 60vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -147,7 +136,7 @@ aside a.callto {
 }
 #visit .img-visit img {
   width: 100%;
-  height: 50vh;
+  height: 60vh;
   object-fit: cover;
   object-position: center center;
 }
@@ -169,6 +158,90 @@ aside a.callto {
 #visit .img-visit .overlay:hover {
   background-color: rgba(255, 255, 255, 0);
   font-size: 1.5em;
+  font-weight: 900;
+}
+
+#about {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 2fr 3fr;
+}
+#about .hexa {
+  margin: 3em 1em 0 5em;
+  grid-column: 1/3;
+  grid-row: 1/4;
+}
+#about .hexa img {
+  transform: rotate(0.02turn);
+}
+#about .hexa a:hover {
+  transform: rotate(-15deg);
+  transition: all 0.2s 0.1s ease-in-out;
+}
+#about aside {
+  margin: 2em 5em 2em 1em;
+  grid-column: 3/-1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#about aside a.callto {
+  margin-right: 3em;
+  margin-left: auto;
+}
+
+#cards {
+  background-color: #1E1E1E;
+  grid-column: 1/-1;
+  grid-row: 2/6;
+}
+#cards .contain {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+#cards .contain a {
+  flex: 1;
+  height: 80%;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cards .contain a:hover {
+  background-color: #ABCF76;
+  transition: all 0.2s 0.1s ease-in-out;
+}
+#cards .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#cards .card img {
+  margin-bottom: 2em;
+  width: 7em;
+  height: 7em;
+}
+
+#contact #logo-btm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#contact #logo-btm img {
+  width: 50%;
+  height: auto;
+}
+#contact #form {
+  grid-column: 1/-1;
+  grid-row: 2;
+  background-color: #ABCF76;
 }
 
 /* FONTS */
@@ -196,7 +269,7 @@ aside a.callto {
   letter-spacing: 0.1em;
   font-kerning: normal;
 }
-.text-box h1, .text-box h2, .card h1, .card h2, .img-visit h1, .img-visit h2 {
+.text-box h1, .text-box h2, .text-box h3, .card h1, .card h2, .card h3, .img-visit h1, .img-visit h2, .img-visit h3 {
   font-family: "Mukta Malar", sans-serif;
   font-weight: 700;
   font-style: normal;
@@ -206,6 +279,12 @@ aside a.callto {
 }
 .text-box h2, .card h2, .img-visit h2 {
   padding: 0;
+}
+.text-box h3, .card h3, .img-visit h3 {
+  padding: 1em 1em 0 1em;
+  font-weight: 200;
+  font-size: 1em;
+  text-transform: none;
 }
 .text-box p, .card p, .img-visit p {
   font-family: "Neuton", serif;
@@ -241,6 +320,27 @@ a.accent-color {
 }
 a.accent-color:hover {
   font-weight: 500;
+}
+
+/* hexagon shaped image */
+.hexa {
+  /* margin: 1em 5em 0 1em;*/
+  height: 18em;
+  width: 18em;
+  z-index: 200;
+  filter: drop-shadow(2px 2px 4px rgba(30, 30, 30, 0.3));
+  /*a:hover{
+      transform: rotate(15deg);
+      transition: all 0.2s 0.1s ease-in-out;
+  }*/
+}
+.hexa img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
 }
 
 /*# sourceMappingURL=style.css.map */
