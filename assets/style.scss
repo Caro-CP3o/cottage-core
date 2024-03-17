@@ -25,8 +25,29 @@ $opacity: rgba(217,217,217,0.3);
 @import "stay.scss";
 @import "about.scss";
 @import "contact.scss";
+@import "galery.scss";
 /* FONTS */
 @import "https://fonts.googleapis.com/css2?family=Mukta+Malar:wght@200;300;400;500;600;700;800&family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&display=swap";
+
+/* ANIMATIONS */
+@keyframes hexa-rt{
+    0%{
+        transform: rotate(0deg);
+    }50%{
+        transform: rotate(15deg);
+    }100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes hexa-lf{
+    0%{
+        transform: rotate(0deg);
+    }50%{
+        transform: rotate(-15deg);
+    }100%{
+        transform: rotate(0deg);
+    }
+}
 
 /* GENERAL */
     /* structure */
@@ -65,12 +86,20 @@ $opacity: rgba(217,217,217,0.3);
         font-size: 1em;
         text-transform: none;
     }
-    p, input::placeholder{
+    p{
         font-family: "Neuton", serif;
         font-weight: 300;
         font-style: normal;
         font-size: 1.2em;
-        color: red;
+    }
+    input::placeholder, textarea::placeholder{
+        font-family: "Mukta Malar", sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        text-transform: uppercase;
+        padding-left: 1em;
+        font-size: 1em;
+        color: $cold;
     }
 }
     /* call to action button #booking modal window */ 
@@ -103,17 +132,10 @@ a.accent-color{
 }
     /* hexagon shaped image */
 .hexa{
-   /* margin: 1em 5em 0 1em;*/
     height: 18em;
     width: 18em;
-    // grid-column: 4 / -1;
-    // grid-row: 2 / span 3;
     z-index: 200;
     filter: drop-shadow(2px 2px 4px $dark-shadow);
-    /*a:hover{
-        transform: rotate(15deg);
-        transition: all 0.2s 0.1s ease-in-out;
-    }*/
     img{
         display: block;
         width: 100%;
@@ -121,6 +143,16 @@ a.accent-color{
         object-fit: cover;
         object-position: top left;
         clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
-        // transform: rotate(-0.02turn);
+    }
+    a{
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: forwards;
+        animation-timing-function: ease-in-out;
+        transition: rotate(15deg) 2s ease-out 100ms;
+        animation-play-state: paused;
+    }
+    a:hover{
+        animation-play-state: running;
     }
 }

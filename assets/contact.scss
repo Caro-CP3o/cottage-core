@@ -18,13 +18,25 @@
         form{
             display: flex;
             justify-content: space-between;
+            #msg, .contain{
+                flex: 1;
+            }
+            .contain{
+                padding-right: 1em;
+                .form-group{
+                    padding-bottom: 1em;
+                }
+            }
+            .form-group, .contain{
+                margin: 1px;
+            }
             .form-group input, textarea{
-                width: 35em;
+                width: 100%;
                 background-color: $neutral;
                 padding: 1em 0;
                 border: none;
                 cursor: text;
-                margin: 1em;
+                // margin: 1em;
             }
             textarea{
                 height: 15em;

@@ -29,9 +29,10 @@ header{
     }
     li{
         flex: 1;
+        border-right: 1px solid $neutral;
+        padding: 0 1em;
+        width: min-content;
         a{
-            width: 100%;
-            display: block;
             text-align: center;
             text-decoration: none;
             text-transform: uppercase;
@@ -39,12 +40,12 @@ header{
             font-weight: 300;
             font-style: normal;
             letter-spacing: 0.1em;
-            padding: 0 1em;
+            //padding: 0 1em;
             color: $neutral;
-            border-right: 1px solid $neutral;
             &:hover{
-                color: $cold;
                 font-weight: 700;
+                color: $cold;
+                //-webkit-text-stroke: 1.5px $cold;
                 transition: all .5s ease-in-out;
             }
         }

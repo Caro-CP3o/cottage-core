@@ -50,10 +50,11 @@ header {
 }
 #menu-top li {
   flex: 1;
+  border-right: 1px solid #fff;
+  padding: 0 1em;
+  width: min-content;
 }
 #menu-top li a {
-  width: 100%;
-  display: block;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -61,13 +62,11 @@ header {
   font-weight: 300;
   font-style: normal;
   letter-spacing: 0.1em;
-  padding: 0 1em;
   color: #fff;
-  border-right: 1px solid #fff;
 }
 #menu-top li a:hover {
-  color: #ABCF76;
   font-weight: 700;
+  color: #ABCF76;
   transition: all 0.5s ease-in-out;
 }
 #menu-top #logo-menu-top {
@@ -100,9 +99,8 @@ header {
 #home .hexa img {
   transform: rotate(-0.02turn);
 }
-#home .hexa a:hover {
-  transform: rotate(15deg);
-  transition: all 0.2s 0.1s ease-in-out;
+#home .hexa a {
+  animation-name: hexa-rt;
 }
 
 aside {
@@ -173,9 +171,8 @@ aside a.callto {
 #about .hexa img {
   transform: rotate(0.02turn);
 }
-#about .hexa a:hover {
-  transform: rotate(-15deg);
-  transition: all 0.2s 0.1s ease-in-out;
+#about .hexa a {
+  animation-name: hexa-lf;
 }
 #about aside {
   margin: 2em 5em 2em 1em;
@@ -250,13 +247,24 @@ aside a.callto {
   display: flex;
   justify-content: space-between;
 }
+#contact #form form #msg, #contact #form form .contain {
+  flex: 1;
+}
+#contact #form form .contain {
+  padding-right: 1em;
+}
+#contact #form form .contain .form-group {
+  padding-bottom: 1em;
+}
+#contact #form form .form-group, #contact #form form .contain {
+  margin: 1px;
+}
 #contact #form form .form-group input, #contact #form form textarea {
-  width: 35em;
+  width: 100%;
   background-color: #fff;
   padding: 1em 0;
   border: none;
   cursor: text;
-  margin: 1em;
 }
 #contact #form form textarea {
   height: 15em;
@@ -266,7 +274,48 @@ aside a.callto {
   margin-left: auto;
 }
 
+#galery {
+  height: 100vh;
+}
+#galery .container-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+#galery .grid {
+  overflow: hidden;
+}
+#galery .grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
 /* FONTS */
+/* ANIMATIONS */
+@keyframes hexa-rt {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+@keyframes hexa-lf {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(-15deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 /* GENERAL */
 /* structure */
 .slide, .mi-slide {
@@ -308,12 +357,20 @@ aside a.callto {
   font-size: 1em;
   text-transform: none;
 }
-.text-box p, .text-box input::placeholder, .card p, .card input::placeholder, .img-visit p, .img-visit input::placeholder, .form-group p, .form-group input::placeholder {
+.text-box p, .card p, .img-visit p, .form-group p {
   font-family: "Neuton", serif;
   font-weight: 300;
   font-style: normal;
   font-size: 1.2em;
-  color: red;
+}
+.text-box input::placeholder, .text-box textarea::placeholder, .card input::placeholder, .card textarea::placeholder, .img-visit input::placeholder, .img-visit textarea::placeholder, .form-group input::placeholder, .form-group textarea::placeholder {
+  font-family: "Mukta Malar", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  text-transform: uppercase;
+  padding-left: 1em;
+  font-size: 1em;
+  color: #ABCF76;
 }
 
 /* call to action button #booking modal window */
@@ -347,15 +404,10 @@ a.accent-color:hover {
 
 /* hexagon shaped image */
 .hexa {
-  /* margin: 1em 5em 0 1em;*/
   height: 18em;
   width: 18em;
   z-index: 200;
   filter: drop-shadow(2px 2px 4px rgba(30, 30, 30, 0.3));
-  /*a:hover{
-      transform: rotate(15deg);
-      transition: all 0.2s 0.1s ease-in-out;
-  }*/
 }
 .hexa img {
   display: block;
@@ -364,6 +416,17 @@ a.accent-color:hover {
   object-fit: cover;
   object-position: top left;
   clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+.hexa a {
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  transition: rotate(15deg) 2s ease-out 100ms;
+  animation-play-state: paused;
+}
+.hexa a:hover {
+  animation-play-state: running;
 }
 
 /*# sourceMappingURL=style.css.map */
